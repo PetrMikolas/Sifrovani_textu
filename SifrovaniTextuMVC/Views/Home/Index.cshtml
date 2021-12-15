@@ -1,0 +1,56 @@
+﻿@model SifrovaniTextuMVC.Models.AlgoritmusMorseovaAbeceda
+
+    <title>Šifrování textu</title>
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <link rel="icon" type="image/ico" href="/golden-key.ico" />
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+
+    <div id="obal">
+        <form asp-action="Index" id="form">
+            <h2>Šifrování textu</h2>
+            <h4>Šifrovací algoritmus - Morseova abeceda</h4>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <fieldset>
+                <legend>Vyberte činnost: </legend>
+                <input asp-for="Cinnost" id="Sifrovat" value="Sifrovat" type="radio" onclick="submit()"><label for="Sifrovat">Šifrovat</label>
+                <br />
+                <input asp-for="Cinnost" id="Desifrovat" value="Desifrovat" type="radio" onclick="submit()"><label for="Desifrovat">Dešifrovat </label>
+            </fieldset>
+            <br />
+            <div>
+                <label>@Model.LabelIn</label>
+                <br />
+                <label>@Model.LabelIn2</label>
+                <br />
+                <textarea asp-for="TextIn" id="textIn" OnKeypress="return validace()"></textarea>
+            </div>
+            <br />
+            <div>
+                <label>@Model.LabelOut</label>
+                <br />
+                <div id="textOut">
+                    @Model.TextOut
+                </div>
+            </div>
+            <br />
+            <div>
+                <input asp-for="SifrujDesifruj" id="buttonSifrovat" value="Šifruj / Dešifruj" type="submit" />
+                <button id="buttonVymazat" onclick="resetAllControls()">Vymazat text</button>
+                <button asp-action="Caesar" id="buttonPrepni" onclick="resetAllControls()" title="Klikněte na tlačítko pro změnu šifrovacího algoritmu">Šifrovací algoritmus - Caesarova šifra</button>
+            </div>
+        </form>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/jQuery.js"></script>
+    <script src="~/js/Morseovka.js"></script>

@@ -1,0 +1,61 @@
+﻿@model SifrovaniTextuMVC.Models.AlgoritmusCaesarovaSifra
+
+    <title>Šifrování textu</title>
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <link rel="icon" type="image/ico" href="/golden-key.ico" />
+
+    @{
+        ViewData["Title"] = "Caesar";
+    }
+
+
+    <div id="obal">
+        <form asp-action="Caesar" id="form">
+            <h2>Šifrování textu</h2>
+            <h4>Šifrovací algoritmus - Caesarova šifra</h4>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <fieldset>
+                <legend>Vyberte činnost: </legend>
+                <input asp-for="Cinnost" id="Sifrovat" value="Sifrovat" type="radio" onclick="submit()"><label for="Sifrovat">Šifrovat</label>
+                <br />
+                <input asp-for="Cinnost" id="Desifrovat" value="Desifrovat" type="radio" onclick="submit()"><label for="Desifrovat">Dešifrovat </label>
+            </fieldset>
+            <br />
+            <div id="divRamecek">
+                <label>Nastavte posun v rozsahu 1 - 25: </label>
+                <input asp-for="Posun" type="number" value="1" min="1" max="25" />
+            </div>
+            <br />
+            <div>
+                <label>@Model.LabelIn</label>
+                <br />
+                <label>@Model.LabelIn2</label>
+                <br />
+                <textarea asp-for="TextIn" id="textIn" OnKeypress="return validace()"></textarea>
+            </div>
+            <br />
+            <div>
+                <label>@Model.LabelOut</label>
+                <br />
+                <div id="textOut">
+                    @Model.TextOut
+                </div>
+            </div>
+            <br />
+            <div>
+                <input asp-for="SifrujDesifruj" id="buttonSifrovat" value="Šifruj / Dešifruj" type="submit" />
+                <button id="buttonVymazat" onclick="resetAllControls()">Vymazat text</button>
+                <button asp-action="Index" id="buttonPrepni" onclick="resetAllControls()" title="Klikněte na tlačítko pro změnu šifrovacího algoritmu" >Šifrovací algoritmus - Morseova abeceda</button>
+            </div>
+        </form>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/jQuery.js"></script>
+    <script src="~/js/Caesar.js"></script>

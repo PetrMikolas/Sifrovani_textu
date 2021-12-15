@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon>golden-key.ico</ApplicationIcon>
+    <Authors>Petr Mikoláš</Authors>
+    <Company />
+    <Product>Šifrování textu</Product>
+    <PackageIcon>golden-key.ico</PackageIcon>
+    <PackageIconUrl />
+    <AssemblyName>Šifrování textu</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Petr\Pictures\golden-key.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="wwwroot\css\Style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>

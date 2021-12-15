@@ -1,0 +1,88 @@
+﻿
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    margin: 25px;
+    padding: 0;
+}
+
+#obal {
+    margin: 0px auto;
+    padding: 10px 30px 20px 30px;
+    width: 632px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+h2,
+h4 {
+    text-align: center;
+}
+
+fieldset {
+    margin: 0px;
+    width: 606px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(133, 133, 133);
+}
+
+#divRamecek {
+    height: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    padding-top: 11px;
+    padding-left: 18px;
+}
+
+#textIn {
+    width: 632px;
+    height: 100px;
+    border: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-top: 4px;
+    font-size: 18px;
+    resize: none;
+}
+
+#textOut {
+    width: 630px;
+    height: 98px;
+    border: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-top: 4px;
+    font-size: 18px;
+    resize: none;
+}
+
+#buttonSifrovat {
+    float: left;
+    height: 30px;
+    width: 150px;
+    background-color: lightgreen;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+#buttonVymazat {
+    float: right;
+    height: 30px;
+    width: 150px;
+    background-color: LightPink;
+    font-size: 16px;
+    margin-top: 5px;
+} 
+
+#buttonPrepni {
+    height: 30px;
+    width: 632px;
+    background-color: antiquewhite;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
